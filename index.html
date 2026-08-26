@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HBUS200 Syllabus – Future of Leadership</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Georgia, 'Times New Roman', serif; background: #faf8f3; color: #201d18; font-size: 16px; line-height: 1.7; }
+
+  .hero { background: #1b2a4a; color: #fff; padding: 3rem 2rem 2rem; text-align: center; }
+  .hero .tag { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #c9a868; margin-bottom: 0.75rem; }
+  .hero h1 { font-size: 2rem; font-weight: 400; margin-bottom: 0.35rem; }
+  .hero .sub { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 14px; color: #aab4c8; margin-bottom: 1.75rem; }
+  .hero-info { display: flex; flex-wrap: wrap; gap: 1.25rem 2.5rem; justify-content: center; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; color: #d9deea; margin-bottom: 2rem; text-align: left; }
+  .hero-info div span { display: block; color: #c9a868; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 3px; }
+  .hero-info a { color: #d9deea; }
+
+  .nav-pills { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+  .nav-pill { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; padding: 7px 18px; border-radius: 20px; border: 1.5px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.85); cursor: pointer; background: transparent; transition: all 0.2s; }
+  .nav-pill:hover, .nav-pill.active { background: #c9a868; color: #1b2a4a; border-color: #c9a868; font-weight: 700; }
+
+  .container { max-width: 880px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+  .section { display: none; }
+  .section.active { display: block; }
+
+  .section-title { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #8a8477; margin: 2.25rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1.5px solid #c9a868; }
+  .section-title:first-child { margin-top: 0; }
+
+  .card { background: #fff; border-radius: 10px; padding: 1.5rem 1.75rem; margin-bottom: 1.25rem; border: 1px solid #ece7db; }
+  .card h3 { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 15px; color: #1b2a4a; margin-bottom: 0.6rem; font-weight: 700; }
+  .card p, .card li { font-size: 15.5px; color: #322e27; }
+  .card ul, .card ol { margin: 0.5rem 0 0.5rem 1.25rem; }
+  .card li { margin-bottom: 0.4rem; }
+  .card a { color: #a6192e; }
+  .note { font-size: 13.5px; color: #77705f; font-style: italic; }
+
+  /* Accordion */
+  .accordion-item { background: #fff; border: 1px solid #ece7db; border-radius: 10px; margin-bottom: 10px; overflow: hidden; }
+  .accordion-header { font-family: 'Helvetica Neue', Arial, sans-serif; display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; cursor: pointer; background: #f4f0e6; }
+  .accordion-header .level-label { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #a6192e; font-weight: 700; }
+  .accordion-header .arrow { font-size: 13px; color: #1b2a4a; transition: transform 0.2s; }
+  .accordion-item.open .arrow { transform: rotate(180deg); }
+  .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.25s ease; }
+  .accordion-item.open .accordion-body { max-height: 4000px; }
+  .class-session { padding: 1rem 1.5rem; border-top: 1px solid #ece7db; }
+  .class-session .date { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; font-weight: 700; color: #1b2a4a; margin-bottom: 4px; }
+  .class-session .focus { font-size: 15.5px; margin-bottom: 6px; }
+  .class-session ul { margin: 0.3rem 0 0.5rem 1.2rem; font-size: 14.5px; color: #4a4538; }
+  .deliverable-tag { display: inline-block; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11.5px; background: #f4e6ea; color: #a6192e; padding: 3px 10px; border-radius: 12px; margin: 2px 4px 2px 0; }
+
+  /* Grading table */
+  table.grade-table { width: 100%; border-collapse: collapse; font-size: 15px; margin-bottom: 0.5rem; }
+  table.grade-table th { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; text-align: left; color: #8a8477; padding: 8px 6px; border-bottom: 2px solid #c9a868; }
+  table.grade-table td { padding: 8px 6px; border-bottom: 1px solid #ece7db; }
+  table.grade-table tr.category td { font-weight: 700; color: #1b2a4a; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; letter-spacing: 0.5px; text-transform: uppercase; background: #f4f0e6; }
+  table.grade-table tr.total td { font-weight: 700; border-top: 2px solid #1b2a4a; }
+  table.grade-table td.pts { text-align: right; font-family: 'Helvetica Neue', Arial, sans-serif; }
+  table.grade-table input[type=number] { width: 55px; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 3px 6px; border: 1px solid #cfc9ba; border-radius: 5px; text-align: right; }
+
+  .calc-result { background: #1b2a4a; color: #fff; border-radius: 10px; padding: 1.5rem; text-align: center; margin-top: 1rem; }
+  .calc-result .grade-letter { font-size: 2.5rem; font-weight: 700; color: #c9a868; font-family: 'Helvetica Neue', Arial, sans-serif; }
+  .calc-result .grade-pct { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 14px; color: #d9deea; margin-top: 4px; }
+  .reset-btn { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; background: transparent; border: 1px solid #cfc9ba; color: #5a5648; padding: 6px 14px; border-radius: 16px; cursor: pointer; margin-top: 0.75rem; }
+  .reset-btn:hover { background: #f4f0e6; }
+
+  .cutoff-table { width: 100%; border-collapse: collapse; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; text-align: center; margin-top: 0.5rem; }
+  .cutoff-table td { padding: 6px 4px; border: 1px solid #ece7db; }
+  .cutoff-table .letter { font-weight: 700; color: #1b2a4a; background: #f4f0e6; }
+
+  /* Policy accordion (simple toggle cards) */
+  .policy-toggle { cursor: pointer; }
+  .policy-toggle .accordion-header { background: #fff; border-bottom: 1px solid #ece7db; }
+  .policy-toggle .accordion-body .inner { padding: 1.25rem 1.5rem; font-size: 15.5px; }
+  .policy-toggle .accordion-body .inner p { margin-bottom: 0.85rem; }
+  .policy-toggle .accordion-body .inner p:last-child { margin-bottom: 0; }
+  .policy-toggle .accordion-body .inner a { color: #a6192e; }
+
+  /* Collaboration matrix */
+  table.collab-table { width: 100%; border-collapse: collapse; font-size: 13px; font-family: 'Helvetica Neue', Arial, sans-serif; margin-top: 0.5rem; }
+  table.collab-table th, table.collab-table td { border: 1px solid #ece7db; padding: 8px 6px; text-align: center; }
+  table.collab-table th { background: #f4f0e6; color: #1b2a4a; font-size: 11px; letter-spacing: 0.5px; }
+  table.collab-table td:first-child, table.collab-table th:first-child { text-align: left; font-weight: 700; color: #201d18; }
+  table.collab-table .yes { color: #2f7d4f; font-weight: 700; font-size: 15px; }
+  table.collab-table .no { color: #cfc9ba; }
+
+  .resource-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+  .resource-card { background: #fff; border: 1px solid #ece7db; border-radius: 10px; padding: 1.25rem 1.4rem; }
+  .resource-card h4 { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 14px; color: #1b2a4a; margin-bottom: 0.4rem; }
+  .resource-card p { font-size: 14px; color: #4a4538; margin-bottom: 0.5rem; }
+  .resource-card a { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; color: #a6192e; }
+
+  .easter-egg { background: #f4f0e6; border: 1px dashed #c9a868; border-radius: 10px; padding: 1rem 1.25rem; font-size: 14.5px; margin-top: 1rem; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 2rem 1rem 1.5rem; }
+    .hero h1 { font-size: 1.5rem; }
+    .container { padding: 1.5rem 1rem 3rem; }
+    table.grade-table { font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="tag">Interdisciplinary Business Honors &middot; Fall 2026</div>
+  <h1>HBUS200: Future of Leadership</h1>
+  <div class="sub">Professor Nicole M. Coomber</div>
+  <div class="hero-info">
+    <div><span>Email</span>ncottre@umd.edu</div>
+    <div><span>Office Hours</span>Thu, 12:30 &ndash; 2 p.m. (<a href="https://calendar.app.google/xpTut72s3SdsDqQV7">by appointment</a>)</div>
+    <div><span>Office</span>VMH 4518</div>
+    <div><span>Teaching Assistant</span>Frans Rejsjo (<a href="mailto:frejsjo@terpmail.umd.edu">frejsjo@terpmail.umd.edu</a>)</div>
+    <div><span>Credits</span>3</div>
+    <div><span>Class Time</span>Wednesday, 4 &ndash; 6:40 p.m.</div>
+    <div><span>Classroom</span>PFR 1105</div>
+  </div>
+  <div class="nav-pills">
+    <button class="nav-pill active" data-section="overview">Overview</button>
+    <button class="nav-pill" data-section="schedule">Schedule</button>
+    <button class="nav-pill" data-section="grading">Grading</button>
+    <button class="nav-pill" data-section="policies">Policies</button>
+    <button class="nav-pill" data-section="resources">Resources</button>
+    <button class="nav-pill" data-section="about">About</button>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- OVERVIEW -->
+  <div class="section active" id="overview">
+    <div class="section-title">Course Description</div>
+    <div class="card">
+      <p>Welcome to <strong>Future of Leadership!</strong> As part of this unique, interdisciplinary course, you'll delve into how leaders <strong>make decisions</strong> in plural societies.</p>
+      <p style="margin-top:0.75rem;">In this course, you'll embark on a Leader's Journey, discovering your unique leadership style and building critical skills that will prepare you to navigate and lead in uncertain times. We will explore foundational leadership theories, develop problem-solving abilities, and learn how to build effective teams. As you progress through the course, you'll map out strategic visions, influence others, and make decisions that drive impactful outcomes.</p>
+      <p style="margin-top:0.75rem;">You will apply the theories in this course to a real-life challenge in the form of your "squad" project, and the frameworks we learn here will prepare you for the future. Whether you aspire to lead in business, engineering, technology, healthcare, education, the arts, government, or any other field, the problem-solving skills and knowledge you acquire here will be invaluable in your future career. By the end of the semester, you'll be well-equipped to lead with confidence and resilience in any field.</p>
+      <p style="margin-top:0.75rem;">Let's begin this exciting journey together and prepare to become the leaders of tomorrow!</p>
+      <p class="note" style="margin-top:0.9rem;">This course is designed for exceptional students enrolled in the Interdisciplinary Business Honors program, who have already completed HBUS100 and HBUS105.</p>
+    </div>
+
+    <div class="section-title">Course Objectives</div>
+    <div class="card">
+      <p>After successfully completing this course you will be able to:</p>
+      <ul>
+        <li>Develop and apply a structured problem-solving process that integrates various perspectives and comprehensive strategies to address complex leadership challenges.</li>
+        <li>Demonstrate understanding socially-driven constructions of difference (cultural, historical, social, and ideological) and their impact on leadership practices.</li>
+        <li>Use a comparative framework to examine how different cultural, historical, or social contexts influence leadership strategies across various organizations or societies.</li>
+      </ul>
+    </div>
+
+    <div class="section-title">Course Structure</div>
+    <div class="card">
+      <p>This course will meet once per week, and students are expected to read the assigned readings in advance of the class to prepare for discussion and exercises during the class time.</p>
+    </div>
+
+    <div class="section-title">Required Resources</div>
+    <div class="card">
+      <ul>
+        <li>Course Website: <a href="http://www.elms.umd.edu/">elms.umd.edu</a></li>
+        <li>Reading: Webb, C. (2016). <em>How to have a good day: Harness the power of behavioral science to transform your working life.</em> Crown Business. (<a href="https://a.co/d/3wC1Mz1">link</a>)</li>
+        <li>Access to <a href="https://notebook.google.com/">Gemini Notebook</a> using your umd.edu account</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SCHEDULE -->
+  <div class="section" id="schedule">
+    <div class="section-title">Course Outline &amp; Assignments</div>
+    <p class="note" style="margin-bottom: 1rem; display:block;">Note: This is a tentative schedule, and subject to change as necessary &mdash; monitor the course ELMS page for current deadlines. In the unlikely event of a prolonged university closing, or an extended absence from the university, adjustments to the course schedule, deadlines, and assignments will be made based on the duration of the closing and the specific dates missed.</p>
+
+    <div id="accordion-schedule"></div>
+  </div>
+
+  <!-- GRADING -->
+  <div class="section" id="grading">
+    <div class="section-title">Grade Calculator</div>
+    <div class="card">
+      <p style="margin-bottom:0.75rem;">Enter the points you've earned so far for any completed deliverables &mdash; leave the rest blank. For each individual assignment, it is essential that you review the grading rubric; all the details of how each assignment is graded will be contained there.</p>
+      <table class="grade-table" id="calc-table">
+        <thead><tr><th>Deliverable</th><th style="text-align:right;">Points earned</th><th style="text-align:right;">Out of</th></tr></thead>
+        <tbody id="calc-body"></tbody>
+      </table>
+      <div class="calc-result">
+        <div class="grade-letter" id="calc-letter">&ndash;</div>
+        <div class="grade-pct" id="calc-pct">Enter your grades above to see your current standing</div>
+      </div>
+      <div style="text-align:center;"><button class="reset-btn" id="calc-reset">Reset calculator</button></div>
+    </div>
+
+    <div class="section-title">Grading Structure</div>
+    <div class="card">
+      <table class="grade-table">
+        <tbody>
+          <tr class="category"><td colspan="2">Individual Deliverables</td></tr>
+          <tr><td>Syllabus Agreement</td><td class="pts">2</td></tr>
+          <tr><td>Individual Values &amp; Goal Setting Assignment</td><td class="pts">5</td></tr>
+          <tr><td>Project Pitch</td><td class="pts">3</td></tr>
+          <tr><td>Project Pitch Response</td><td class="pts">2</td></tr>
+          <tr><td>Exercise #1</td><td class="pts">10</td></tr>
+          <tr><td>Exercise #2</td><td class="pts">10</td></tr>
+          <tr><td>Squad Feedback Report #1</td><td class="pts">5</td></tr>
+          <tr><td>Squad Survey Draft</td><td class="pts">3</td></tr>
+          <tr><td>Squad Feedback Report #2</td><td class="pts">10</td></tr>
+          <tr><td>Leader's Journey Reflection &amp; Leadership Blueprint</td><td class="pts">10</td></tr>
+          <tr><td>Class Participation</td><td class="pts">5</td></tr>
+          <tr class="category"><td colspan="2">Squad Achievements</td></tr>
+          <tr><td>Squad Charter</td><td class="pts">5</td></tr>
+          <tr><td>Squad Check-In</td><td class="pts">5</td></tr>
+          <tr><td>Squad Strategy Report #1</td><td class="pts">10</td></tr>
+          <tr><td>Squad Strategy Report #2</td><td class="pts">15</td></tr>
+          <tr class="total"><td>Total</td><td class="pts">100</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:1rem;">All assessment scores will be posted on the course ELMS page. If you would like to review any of your grades (including the exams), or have questions about how something was scored, please email me within one week of receiving the grade with the specific concern and to schedule a time for us to discuss. I am happy to discuss any of your grades with you.</p>
+      <p style="margin-top:0.75rem;">Final letter grades are assigned based on the percentage of total assessment points earned. To be fair to everyone I have to establish clear standards and apply them consistently, so please understand that being close to a cutoff is not the same as making the cut (89.99 &ne; 90.00). It would be unethical to make exceptions for some and not others.</p>
+    </div>
+
+    <div class="section-title">Letter Grades</div>
+    <div class="card">
+      <p style="margin-bottom:0.5rem;">Your grades will be determined by your final points in a class. Please see below for the letter grade breakdown. Your grade will be visible on Canvas; as assignments are graded, you will see your grade updated.</p>
+      <table class="cutoff-table">
+        <tr>
+          <td class="letter">A+</td><td>97.00+</td>
+          <td class="letter">B+</td><td>87.00+</td>
+          <td class="letter">C+</td><td>77.00+</td>
+          <td class="letter">D+</td><td>67.00+</td>
+          <td class="letter">F</td><td>&lt;60.00</td>
+        </tr>
+        <tr>
+          <td class="letter">A</td><td>92.00</td>
+          <td class="letter">B</td><td>82.00</td>
+          <td class="letter">C</td><td>72.00</td>
+          <td class="letter">D</td><td>62.00</td>
+          <td></td><td></td>
+        </tr>
+        <tr>
+          <td class="letter">A&minus;</td><td>90.00</td>
+          <td class="letter">B&minus;</td><td>80.00</td>
+          <td class="letter">C&minus;</td><td>70.00</td>
+          <td class="letter">D&minus;</td><td>60.00</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- POLICIES -->
+  <div class="section" id="policies">
+    <div class="section-title">IBH Policies</div>
+    <div id="policy-accordion"></div>
+
+    <div class="section-title">Academic Integrity</div>
+    <div class="card">
+      <p>The University's Code of Academic Integrity is designed to ensure that the principles of academic honesty and integrity are upheld. In accordance with this code, the University of Maryland does not tolerate academic dishonesty. Please ensure that you fully understand this code and its implications because all acts of academic dishonesty will be dealt with in accordance with the provisions of this code. All students are expected to adhere to this Code. It is your responsibility to read it and know what it says, so you can start your professional life on the right path. <strong>As future professionals, your commitment to high ethical standards and honesty begins with your time at the University of Maryland.</strong></p>
+      <p style="margin-top:0.75rem;">It is important to note that course assistance websites, such as CourseLeader, or AI-generated content are not permitted sources unless the instructor explicitly gives permission. Material taken or copied from these sites can be deemed unauthorized material and a violation of academic integrity. These sites offer information that might be inaccurate or biased and most importantly, relying on restricted sources will hamper your learning process, particularly the critical thinking steps necessary for college-level assignments.</p>
+      <p style="margin-top:0.75rem;">Additionally, students may naturally choose to use online forums for course-wide discussions (e.g., Group lists or chats) to discuss concepts in the course. However, collaboration on graded assignments is strictly prohibited unless otherwise stated. Examples of prohibited collaboration include: asking classmates for answers on quizzes or exams, asking for access codes to clicker polls, etc. Please visit the <a href="http://www.ugst.umd.edu/courserelatedpolicies.html">Office of Undergraduate Studies' full list of campus-wide policies</a> and reach out if you have questions.</p>
+      <p style="margin-top:0.75rem;">Finally, on each exam or assignment you must write out and sign the following pledge:</p>
+      <p style="margin-top:0.4rem;"><em>"I pledge on my honor that I have not given or received any unauthorized assistance on this exam/assignment."</em></p>
+      <p style="margin-top:0.75rem;">If you ever feel pressured to comply with someone else's academic integrity violation, please reach out to me straight away. Also, <em>if you are ever unclear</em> about acceptable levels of collaboration, <em>please ask</em>! To help you avoid unintentional violations, <em>the following table</em> lists levels of collaboration that are acceptable for each graded exercise. Each assignment will contain more specific information regarding acceptable levels of collaboration.</p>
+      <div style="overflow-x:auto;">
+      <table class="collab-table">
+        <thead><tr><th>Deliverable</th><th>Open notes</th><th>Book</th><th>Ask friends</th><th>Search online</th><th>Work in groups</th><th>Use GenAI</th></tr></thead>
+        <tbody id="collab-body"></tbody>
+      </table>
+      </div>
+    </div>
+
+    <div class="section-title">Attendance &amp; Participation</div>
+    <div class="card">
+      <ul>
+        <li>Given the interactive style of this class, attendance will be crucial to note-taking and thus your performance in this class. Attendance is particularly important also because class discussion will be a critical component for your learning.</li>
+        <li>Each student is expected to make substantive contributions to the learning experience, and attendance is expected for every session.</li>
+        <li>Students with a legitimate reason to miss a class session should communicate in advance with the instructor, except in the case of an emergency, as noted above.</li>
+        <li>Students who miss a live session are responsible for learning what they miss from that session.</li>
+        <li>Additionally, students must complete all readings and assignments in a timely manner in order to fully participate in class.</li>
+      </ul>
+    </div>
+
+    <div class="section-title">Policies for Undergraduate Courses</div>
+    <div class="card">
+      <p>It is our shared responsibility to know and abide by the University of Maryland's policies that relate to all courses, which include topics like:</p>
+      <ul>
+        <li>Academic integrity</li>
+        <li>Student and instructor conduct</li>
+        <li>Accessibility and accommodations</li>
+        <li>Attendance and excused absences</li>
+        <li>Grades and appeals</li>
+        <li>Copyright and intellectual property</li>
+      </ul>
+      <p style="margin-top:0.75rem;">Please visit <a href="http://www.ugst.umd.edu/courserelatedpolicies.html">www.ugst.umd.edu/courserelatedpolicies.html</a> for the Office of Undergraduate Studies' full list of campus-wide policies and follow up with me if you have questions.</p>
+    </div>
+  </div>
+
+  <!-- RESOURCES -->
+  <div class="section" id="resources">
+    <div class="section-title">Course Guidelines</div>
+    <div class="card">
+      <h3>Communication with Instructor</h3>
+      <p>Email: If you need to reach out and communicate with me, please email me at ncottre@umd.edu. As always, check the syllabus and ELMS page first before emailing us! Please DO always reach out about personal, academic, and intellectual concerns/questions.</p>
+      <p style="margin-top:0.6rem;">While I will do my best to respond to emails within 24 hours, you will more likely receive email responses from me on Mondays, Wednesdays and Fridays from 8:00am&ndash;10:00am EST.</p>
+      <p style="margin-top:0.6rem;">ELMS: I will send IMPORTANT announcements via ELMS messaging. You must make sure that your email &amp; announcement notifications (including changes in assignments and/or due dates) are enabled in ELMS so you do not miss any messages. You are responsible for checking your email and Canvas/ELMS inbox with regular frequency.</p>
+      <h3 style="margin-top:1.25rem;">Communication with Peers</h3>
+      <p>With a diversity of perspectives and experience, we may find ourselves in disagreement and/or debate with one another. As such, it is important that we agree to conduct ourselves in a professional manner and that we work together to foster and preserve a virtual classroom environment in which we can respectfully discuss and deliberate controversial questions. I encourage you to confidently exercise your right to free speech&mdash;bearing in mind, of course, that you will be expected to craft and defend arguments that support your position. Keep in mind, that free speech has its limit and this course is NOT the space for hate speech, harassment, and derogatory language. I will make every reasonable attempt to create an atmosphere in which each student feels comfortable voicing their argument without fear of being personally attacked, mocked, demeaned, or devalued.</p>
+      <p style="margin-top:0.6rem;">Any behavior (including harassment, sexual harassment, shunning, and racially and/or culturally derogatory language) that threatens this atmosphere will not be tolerated. Please alert me immediately if you feel threatened, dismissed, or silenced at any point during our semester together and/or if your engagement in discussion has been in some way hindered by the learning environment.</p>
+    </div>
+
+    <div class="section-title">Resources &amp; Accommodations</div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4>Accessibility &amp; Disability Services</h4>
+        <p>The University of Maryland is committed to creating and maintaining a welcoming and inclusive educational, working, and living environment for people of all abilities. ADS cannot assist retroactively, so it is generally best to request accommodations several weeks before the semester begins or as soon as a disability becomes known. Contact me as soon as possible so I have sufficient time to make arrangements.</p>
+        <a href="https://www.counseling.umd.edu/ads/">counseling.umd.edu/ads</a> &middot; 301-314-7682 &middot; <a href="mailto:adsfrontdesk@umd.edu">adsfrontdesk@umd.edu</a>
+      </div>
+      <div class="resource-card">
+        <h4>Student Resources &amp; Services</h4>
+        <p>Taking personal responsibility for your own learning means acknowledging when your performance does not match your goals and doing something about it. Come talk to me so I can help you find the right approach, and visit UMD's Student Academic Support Services for the wide range of resources available to you.</p>
+        <a href="http://tutoring.umd.edu">tutoring.umd.edu</a> &middot; <a href="http://www.english.umd.edu/academics/writingcenter/schedule">Writing Center</a> &middot; <a href="https://www.counseling.umd.edu/">Counseling Center</a>
+      </div>
+      <div class="resource-card">
+        <h4>Notice of Mandatory Reporting</h4>
+        <p>As a faculty member, I am designated as a "Responsible University Employee," and I must report all disclosures of sexual assault, sexual harassment, interpersonal violence, and stalking to UMD's Title IX Coordinator. If you wish to speak with someone confidentially, contact CARE to Stop Violence (301-741-3442) or the Counseling Center (301-314-7651).</p>
+        <a href="https://health.umd.edu/CARE">CARE to Stop Violence</a> &middot; <a href="https://ocrsm.umd.edu/">ocrsm.umd.edu</a>
+      </div>
+      <div class="resource-card">
+        <h4>Basic Needs Security</h4>
+        <p>If you have difficulty affording groceries or accessing sufficient food to eat every day, or lack a safe and stable place to live, visit UMD's Division of Student Affairs website for information about resources the campus offers you, and let me know if I can help in any way.</p>
+        <a href="https://studentaffairs.umd.edu/basic-needs-security">studentaffairs.umd.edu/basic-needs-security</a>
+      </div>
+      <div class="resource-card">
+        <h4>Veteran Resources</h4>
+        <p>UMD provides additional support to student veterans. Veterans and active duty military personnel with special circumstances (e.g., upcoming deployments, drill requirements, disabilities) are welcome and encouraged to communicate these, in advance if possible, to the instructor.</p>
+        <a href="https://stamp.umd.edu/engagement/veteran_student_life">Veteran Student Life</a> &middot; <a href="https://www.counseling.umd.edu/aboutus/">Counseling Center</a>
+      </div>
+    </div>
+
+    <div class="section-title">Tips for Success in this Course</div>
+    <div class="card">
+      <ol>
+        <li><strong>Participate.</strong> I invite you to engage deeply, ask questions, and talk about the course content with your classmates. You can learn a great deal from discussing ideas and perspectives with your peers and professor. Participation can also help you articulate your thoughts and develop critical thinking skills.</li>
+        <li><strong>Be respectful.</strong> This course will require group discussions, team projects, and general conversations with your peers and the instructional team. All members of the class should feel welcome to participate. Disagreement is welcomed and often productive, but should be civil and constructive. If any disrespectful behavior is observed, the instructional team will intervene.</li>
+        <li><strong>Manage your time.</strong> Students are often very busy, and I understand that you have obligations outside of this class. However, students do best when they plan adequate time that is devoted to course work. Block your schedule and set aside plenty of time to complete assignments including extra time to handle any technology related problems.</li>
+        <li><strong>Use ELMS-Canvas notification settings.</strong> Pro tip! ELMS-Canvas can ensure you receive timely notifications in your email or via text. Be sure to enable announcements to be sent instantly or daily.</li>
+        <li><strong>Ask for help if needed.</strong> If you need help with ELMS-Canvas or other technology, reach out to IT Support. If you are struggling with a course concept, reach out to me and your classmates for support.</li>
+      </ol>
+    </div>
+
+    <div class="section-title">Course Evaluation</div>
+    <div class="card">
+      <p>Please submit a course evaluation through Student Feedback on Course Experiences in order to help faculty and administrators improve teaching and learning at Maryland. All information submitted to Course Experiences is confidential. Campus will notify you when Student Feedback on Course Experiences is open for you to complete your evaluations at the end of the semester. Please go directly to the <a href="http://courseexp.umd.edu/">Student Feedback on Course Experiences</a> to complete your evaluations. By completing all of your evaluations each semester, you will have the privilege of accessing through Testudo the evaluation reports for the thousands of courses for which 70% or more students submitted their evaluations.</p>
+    </div>
+
+    <div class="section-title">Copyright Notice</div>
+    <div class="card">
+      <p>Course materials are copyrighted and may not be reproduced for anything other than personal use without written permission.</p>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="section" id="about">
+    <div class="section-title">About the Instructor</div>
+    <div class="card">
+      <p>Nicole completed her PhD in Education Policy and Leadership in May of 2012 at the University of Maryland's College of Education, and is a Clinical Professor at the Robert H. Smith School of Business. She teaches organizational behavior, management consulting, and leadership in the undergraduate, MBA, and online MBA programs. Dr. Coomber is the Senior Assistant Dean for Experiential Learning at the Robert H. Smith School of Business. She has consulted with organizations including Gilbane Associates, ABC Construction, and Sequoia Equities. Dr. Coomber is married to a federal government attorney. They have four boys.</p>
+      <div class="easter-egg">If you read this far, congratulations! Email me with a subject line "HBUS200 Video Game" and tell me what your favorite video game is (or if you don't have one), and I'll give you one point of extra credit! Please do this before September 5th, and keep it a secret!</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Nav
+document.querySelectorAll('.nav-pill').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.nav-pill').forEach(function(b) { b.classList.remove('active'); });
+    document.querySelectorAll('.section').forEach(function(s) { s.classList.remove('active'); });
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.section).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+
+// Schedule data
+var schedule = [
+  { level: "Level 1: Your Leader's Journey", sessions: [
+    { date: "9/2", focus: "The Leader's Journey", prep: ["Required Reading: Webb (2016) Introduction & The Science Essentials p. 1-32"], deliverables: [] },
+    { date: "9/9", focus: "Building Your Character", prep: ["Required Reading: Webb (2016) Part I, Chapter 1-2 of p. 33-56"], deliverables: ["Syllabus Agreement"] }
+  ]},
+  { level: "Level 2: Map the Terrain", sessions: [
+    { date: "9/16", focus: "Problem-Solving Map", prep: ["Required Preparation: Watch the following videos:", "Lesson 1: SNAP Framework", "Lesson 2: S of SNAP", "Lesson 2a: Chesapeake Regional Medical Center"], deliverables: ["Individual Values & Goal Setting Assignment", "Project Pitch"] },
+    { date: "9/23", focus: "Guest Speaker: Using AI Effectively to Lead Problem-Solving", prep: [], deliverables: ["Project Pitch Response"] },
+    { date: "9/30", focus: "Structure & Analyze Problems", prep: ["Required Preparation: Watch the following videos:", "Lesson 5A MECE", "Lesson 5B Issue Trees", "Lesson 5C Hypothesis Pyramids", "Lesson 6 Analyze Solutions"], deliverables: [] }
+  ]},
+  { level: "Level 3: Assemble Your Squad", sessions: [
+    { date: "10/7", focus: "Exercise #1 (in class) &middot; Squad Working Time", prep: ["N.B. If you have ADS accommodations, please submit your request for this in-class assignment one week in advance and plan to take the assignment at the testing center"], deliverables: ["Exercise #1", "Squad Charter"] },
+    { date: "10/14", focus: "Surviving & Thriving in Teams", prep: ["Required Reading: Webb (2016) Part III, Chapter 8 p. 112-126; Chapter 9, p. 126-151"], deliverables: [] },
+    { date: "10/21", focus: "Selling Solutions", prep: ["Required Preparation: Watch the following videos:", "Lesson 7 Present the Findings", "Lesson 7A Case Example"], deliverables: [] }
+  ]},
+  { level: "Level 4: Envision the Endgame", sessions: [
+    { date: "10/28", focus: "Guest Speaker: The Career Landscape", prep: [], deliverables: ["Squad Check-In"] },
+    { date: "11/4", focus: "Squad Strategy Report #1", prep: [], deliverables: ["Squad Strategy Report #1", "Squad Feedback Report #1"] },
+    { date: "11/11", focus: "Exercise #2 (in class) &middot; Squad Working Time", prep: ["N.B. If you have ADS accommodations, please submit your request for this in-class assignment one week in advance and plan to take the assignment at the testing center"], deliverables: ["Exercise #2", "Squad Survey Draft"] },
+    { date: "11/18", focus: "TBD: Potential guest speaker or squad working time", prep: [], deliverables: [] }
+  ]},
+  { level: "Level 5: Victory Lap", sessions: [
+    { date: "12/2", focus: "Squad Strategy Report #2", prep: [], deliverables: ["Squad Strategy Report #2", "Squad Feedback Report #2"] },
+    { date: "12/9", focus: "The Leader Returns Home: Preparing for the Next Journey", prep: ["Required Reading: Webb (2016) Part VII, Chapter 20-21, p. 277-291"], deliverables: ["Leader's Journey Reflection & Leadership Blueprint"] }
+  ]}
+];
+
+var accWrap = document.getElementById('accordion-schedule');
+schedule.forEach(function(lvl, i) {
+  var item = document.createElement('div');
+  item.className = 'accordion-item' + (i === 0 ? ' open' : '');
+  var header = document.createElement('div');
+  header.className = 'accordion-header';
+  header.innerHTML = '<span class="level-label">' + lvl.level + '</span><span class="arrow">&#9660;</span>';
+  header.addEventListener('click', function() { item.classList.toggle('open'); });
+  var body = document.createElement('div');
+  body.className = 'accordion-body';
+  lvl.sessions.forEach(function(s) {
+    var sess = document.createElement('div');
+    sess.className = 'class-session';
+    var html = '<div class="date">' + s.date + '</div><div class="focus">' + s.focus + '</div>';
+    if (s.prep.length) {
+      html += '<ul>';
+      s.prep.forEach(function(p) { html += '<li>' + p + '</li>'; });
+      html += '</ul>';
+    }
+    if (s.deliverables.length) {
+      html += '<div>';
+      s.deliverables.forEach(function(d) { html += '<span class="deliverable-tag">' + d + '</span>'; });
+      html += '</div>';
+    }
+    sess.innerHTML = html;
+    body.appendChild(sess);
+  });
+  item.appendChild(header);
+  item.appendChild(body);
+  accWrap.appendChild(item);
+});
+
+// Grade calculator
+var deliverables = [
+  ["Syllabus Agreement", 2],
+  ["Individual Values & Goal Setting Assignment", 5],
+  ["Project Pitch", 3],
+  ["Project Pitch Response", 2],
+  ["Exercise #1", 10],
+  ["Exercise #2", 10],
+  ["Squad Feedback Report #1", 5],
+  ["Squad Survey Draft", 3],
+  ["Squad Feedback Report #2", 10],
+  ["Leader's Journey Reflection & Leadership Blueprint", 10],
+  ["Class Participation", 5],
+  ["Squad Charter", 5],
+  ["Squad Check-In", 5],
+  ["Squad Strategy Report #1", 10],
+  ["Squad Strategy Report #2", 15]
+];
+
+var calcBody = document.getElementById('calc-body');
+deliverables.forEach(function(d, i) {
+  var row = document.createElement('tr');
+  row.innerHTML = '<td>' + d[0] + '</td><td class="pts"><input type="number" min="0" max="' + d[1] + '" step="0.5" data-max="' + d[1] + '" id="calc-input-' + i + '"></td><td class="pts">' + d[1] + '</td>';
+  calcBody.appendChild(row);
+});
+
+function cutoffLetter(pct) {
+  if (pct >= 97) return 'A+';
+  if (pct >= 92) return 'A';
+  if (pct >= 90) return 'A-';
+  if (pct >= 87) return 'B+';
+  if (pct >= 82) return 'B';
+  if (pct >= 80) return 'B-';
+  if (pct >= 77) return 'C+';
+  if (pct >= 72) return 'C';
+  if (pct >= 70) return 'C-';
+  if (pct >= 67) return 'D+';
+  if (pct >= 62) return 'D';
+  if (pct >= 60) return 'D-';
+  return 'F';
+}
+
+function recalc() {
+  var earned = 0, possible = 0, any = false;
+  deliverables.forEach(function(d, i) {
+    var input = document.getElementById('calc-input-' + i);
+    var val = input.value;
+    if (val !== '') {
+      any = true;
+      var num = parseFloat(val);
+      if (isNaN(num)) num = 0;
+      var max = d[1];
+      if (num > max) { num = max; input.value = max; }
+      if (num < 0) { num = 0; input.value = 0; }
+      earned += num;
+      possible += max;
+    }
+  });
+  var letterEl = document.getElementById('calc-letter');
+  var pctEl = document.getElementById('calc-pct');
+  if (!any || possible === 0) {
+    letterEl.textContent = '\u2013';
+    pctEl.textContent = 'Enter your grades above to see your current standing';
+    return;
+  }
+  var pct = (earned / possible) * 100;
+  letterEl.textContent = cutoffLetter(pct);
+  pctEl.textContent = earned.toFixed(1) + ' / ' + possible + ' points entered \u00b7 ' + pct.toFixed(1) + '% average on graded work so far';
+}
+
+deliverables.forEach(function(d, i) {
+  document.getElementById('calc-input-' + i).addEventListener('input', recalc);
+});
+document.getElementById('calc-reset').addEventListener('click', function() {
+  deliverables.forEach(function(d, i) { document.getElementById('calc-input-' + i).value = ''; });
+  recalc();
+});
+
+// Policy accordion
+var policies = [
+  { title: "Absences & Late Policy", body:
+    '<p>The complete <a href="https://president.umd.edu/administration/policies/section-v-student-affairs/v-100g">university policy on absences can be found here</a>.</p>' +
+    '<p>As per university policy, one missed class with an email notification prior to the class meeting is acceptable. For absences longer than 1 class session, or more than twice in the semester, documentation is required. Any late arrival or early departure more than 15 minutes will count as an absence for the course. Continued absences, for any non-documented reason, will result in penalties to the class participation grade as a student cannot participate without being in class.</p>' +
+    '<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSf56458ayIWn36QKp5wIQIctDcm5dzf5dbizI9-A66Sq6LYxw/viewform?usp=headerLinks">Please complete this form if you will be absent in class</a>. Do not email your professor or TA.</p>' +
+    '<p>Late assignments require prior permission from the instructor and must be accompanied by a legitimate reason for not meeting a target deadline. Students may receive a 48-hour grace period on <strong>ONE</strong> individual assignment per term if requested before the due date on assignments where this is indicated on Canvas. Please email the instructor to request this extension. Any additional late assignments in the term must be turned in within 48 hours and will receive -50%; outside of the 48 hours, late assignments will not be accepted.</p>' +
+    '<p>If you are granted approval for a late assignment and cannot complete the assignment within 48 hours of the deadline, please email the instructor with your expected completion date. A late penalty may be assessed.</p>' +
+    '<p><strong><em>Please note that students may only ask questions and receive professor assistance before the posted assignment deadline. The grace period is only for you to work on the assignment, not to receive additional faculty assistance. All questions must be asked before the deadline.</em></strong></p>' +
+    '<p>All team assignments must be completed on time since they are presented in class. If this is an issue for your team please email your instructor immediately. An unexcused absence during a team presentation will result in no credit for that assignment for the absent team member.</p>' +
+    '<p>For Major Scheduled Graded Events (MSGEs), only University-approved absences (religious observance, unforeseen life circumstances out of your control (with documentation), or documented illnesses with appropriate documentation) will be accepted. The MSGEs for this course are Exercise #1, Exercise #2, and the final Leader\'s Journey paper.</p>'
+  },
+  { title: "Technology Policy", body:
+    '<p>Use of cellphones, laptops, headphones, airpods, and other electronic devices is not permitted during class sessions, unless we have designated such use as part of the class exercise. Full attention is expected in order to have engaging and productive class sessions. Your participation grade may be impacted if you violate this policy.</p>'
+  },
+  { title: "AI Use Policy", body:
+    '<p>Use of AI must be cited as any other source. Students may use AI for brainstorming, drafting, refining, and editing any outside-of-class work in this course, as long as the use of AI is disclosed at the bottom of the assignment.</p>' +
+    '<p>Please submit each assignment with a brief AI usage statement or a statement that you did not use AI. Be prepared to supply a PDF of your chat conversations as a supplement to your work upon request.</p>' +
+    '<p>Please note that we will have in-class assignments where you will be expected to demonstrate your understanding of materials without relying upon AI.</p>'
+  },
+  { title: "Grading Questions", body:
+    '<p>As noted above, you are encouraged to contact the course instructor regarding grade concerns within one week of receiving an assignment grade. While you are welcome to contact the IBH Leadership team (Faculty Director, Associate Director, Program Coordinator) with any course concerns or feedback, the first contact specifically regarding grades is the instructional team. The IBH Leadership team is here to support you, but cannot resolve any grading issues you may have.</p>'
+  }
+];
+
+var polWrap = document.getElementById('policy-accordion');
+policies.forEach(function(p, i) {
+  var item = document.createElement('div');
+  item.className = 'accordion-item policy-toggle' + (i === 0 ? ' open' : '');
+  var header = document.createElement('div');
+  header.className = 'accordion-header';
+  header.innerHTML = '<span class="level-label" style="color:#1b2a4a;">' + p.title + '</span><span class="arrow">&#9660;</span>';
+  header.addEventListener('click', function() { item.classList.toggle('open'); });
+  var body = document.createElement('div');
+  body.className = 'accordion-body';
+  body.innerHTML = '<div class="inner">' + p.body + '</div>';
+  item.appendChild(header);
+  item.appendChild(body);
+  polWrap.appendChild(item);
+});
+
+// Collaboration matrix
+var collab = [
+  ["Syllabus Quiz", [1,1,1,1,0,0]],
+  ["Individual Values & Goal Setting Assignment", [1,1,0,0,0,1]],
+  ["Project Pitch", [1,1,1,1,0,1]],
+  ["Exercise #1", [1,1,0,1,0,0]],
+  ["Exercise #2", [1,1,0,1,0,0]],
+  ["Squad Feedback Reports (x2)", [1,1,0,1,0,1]],
+  ["Leader's Journey Reflection", [1,1,0,0,0,1]],
+  ["Squad Charter", [1,1,1,1,1,1]],
+  ["Squad Strategy Report #1", [1,1,1,1,1,1]],
+  ["Squad Strategy Report #2", [1,1,1,1,1,1]]
+];
+var collabBody = document.getElementById('collab-body');
+collab.forEach(function(row) {
+  var tr = document.createElement('tr');
+  var html = '<td>' + row[0] + '</td>';
+  row[1].forEach(function(v) { html += '<td class="' + (v ? 'yes' : 'no') + '">' + (v ? '&#10003;' : '&mdash;') + '</td>'; });
+  tr.innerHTML = html;
+  collabBody.appendChild(tr);
+});
+</script>
+
+</body>
+</html>
